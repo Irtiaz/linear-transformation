@@ -16,6 +16,8 @@ const xAxisTransformationCanvas = (sketch) => {
 		sketch.background(255);
 		drawGraphPaper(sketch, gridSpacing);
 
+		document.getElementById("i-cap-value").textContent = `${iCap.x}i + ${iCap.y}j`;
+
 		sketch.push();
 
 		sketch.translate(sketch.width / 2, sketch.height / 2);
@@ -51,6 +53,8 @@ const yAxisTransformationCanvas = (sketch) => {
 	sketch.draw = () => {
 		sketch.background(255);
 		drawGraphPaper(sketch, gridSpacing);
+
+		document.getElementById("j-cap-value").textContent = `${jCap.x}i + ${jCap.y}j`;
 
 		sketch.push();
 
