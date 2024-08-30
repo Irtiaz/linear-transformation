@@ -8,33 +8,42 @@
   </head>
 	
 <style>
+
 canvas {
 	border: 1px solid black;
 	display: block;
 	margin: 1em auto;
 }
-div {
+
+.box {
 	text-align: center;
 	border: 1px solid blue;
 	margin-bottom: 1em;
 }
+
+h4 {
+	margin: 1em 0;
+}
+
 </style>
 
   <body>
-		<div id="i-cap">
-			Transformed i cap
+		<div id="i-cap" class="box">
+			<h4>Transformed i cap</h4>
 		</div>
 
-		<div id="j-cap">
-			Transformed j cap
+		<div id="j-cap" class="box">
+			<h4>Transformed j cap</h4>
 		</div>
 
-		<div id="original-coordinate">
-			Original Coordinate
+		<div id="original-coordinate" class="box">
+			<h4>Original Coordinate</h4>
+			<div id="original-coordinate-value"></div>
 		</div>
 
-		<div id="transformed-coordinate">
-			Transformed Coordinate
+		<div id="transformed-coordinate" class="box">
+			<h4>Transformed Coordinate</h4>
+			<div id="transformed-coordinate-value"></div>
 		</div>
 
     <script src="lib/p5.min.js"></script>

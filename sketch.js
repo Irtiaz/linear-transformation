@@ -90,6 +90,7 @@ const pointPickerCanvas = (sketch) => {
 		drawGraphPaper(sketch, gridSpacing);
 
 		if (!selectedPoint) return;
+		document.getElementById("original-coordinate-value").textContent = `(${selectedPoint.x}, ${selectedPoint.y})`;
 
 		sketch.push();
 		sketch.translate(sketch.width / 2, sketch.height / 2);
@@ -185,8 +186,11 @@ const transformedCanvas = (sketch) => {
 		}
 
 		sketch.pop();
+	
+		const finalCoordinate = p5.Vector.add(p5.Vector.mult(iCap, selectedPoint.x), p5.Vector.mult(jCap, selectedPoint.y));
+		document.getElementById("transformed-coordinate-value").textContent = `(${finalCoordinate.x}, ${finalCoordinate.y})`
 
-		const finalPoint = p5.Vector.add(p5.Vector.mult(iCap, selectedPoint.x), p5.Vector.mult(jCap, selectedPoint.y)).mult(gridSpacing);
+		const finalPoint = p5.Vector.mult(finalCoordinate, gridSpacing);
 
 		sketch.stroke(255, 0, 0, 150);
 		sketch.strokeWeight(8);
